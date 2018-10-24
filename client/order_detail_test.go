@@ -1,16 +1,16 @@
-package yunji
+package client
 
 import (
 	"testing"
 	"time"
-	"yunji/test"
+	"github.com/taadis/yunji-sdk-go/config"
 )
 
 //
 func TestOrderDetail1(t *testing.T) {
 	request := new(OrderDetailRequest)
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil {
 		t.Error(err)
 	}
@@ -36,7 +36,7 @@ func TestOrderDetail2(t *testing.T)  {
 	orderListRequest.PageNo = 1
 	orderListRequest.Status = "40,50"
 
-	client,err := NewClient(test.ServerUrl,test.AppKey, test.AppSecret)
+	client,err := NewClient(config.ServerUrl,config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Error(err)
 	}

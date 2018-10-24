@@ -1,15 +1,15 @@
-package yunji
+package client
 
 import (
+	"github.com/taadis/yunji-sdk-go/config"
 	"testing"
 	"time"
-	"yunji/test"
 )
 
 //
 func TestOrderRefundListRequest1(t *testing.T) {
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Errorf(err.Error())
 	}
@@ -33,7 +33,7 @@ func TestOrderRefundListRequest2(t *testing.T){
 	request := new(OrderRefundListRequest)
 	request.ReturnStatus = "0,1,3,4,5"
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Errorf(err.Error())
 	}
@@ -56,7 +56,7 @@ func TestOrderRefundListRequest3(t *testing.T){
 	request.ReturnStatus = "0,1,3,4,5"
 	request.StartTime = time.Now().AddDate(-1, 0, 0).Format("2006-01-02 15:04:05")
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Errorf(err.Error())
 	}
@@ -80,7 +80,7 @@ func TestOrderRefundListRequest4(t *testing.T){
 	request.StartTime = time.Now().AddDate(-1, 0, 0).Format("2006-01-02 15:04:05")
 	request.EndTime = time.Now().Format("2016-01-02 15:04:05")
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Errorf(err.Error())
 	}
@@ -105,7 +105,7 @@ func TestOrderRefundListRequest5(t *testing.T){
 	request.EndTime = time.Now().Format("2016-01-02 15:04:05")
 	request.PageSize = 1
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Errorf(err.Error())
 	}
@@ -131,7 +131,7 @@ func TestOrderRefundListRequest6(t *testing.T){
 	request.PageSize = 1
 	request.PageNo = 1
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Errorf(err.Error())
 	}

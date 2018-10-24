@@ -1,16 +1,16 @@
-package yunji
+package client
 
 import (
 	"testing"
 	"time"
-	"yunji/test"
+	"github.com/taadis/yunji-sdk-go/config"
 )
 
 //
 func TestLogisticSync1(t *testing.T)  {
 	request := new(LogisticSyncRequest)
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Error(err)
 	}
@@ -31,7 +31,7 @@ func TestLogisticSync2(t *testing.T)  {
 	request := new(LogisticSyncRequest)
 	request.OrderId = "46546416"
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Error(err)
 	}
@@ -55,7 +55,7 @@ func TestLogisticSync3(t *testing.T)  {
 	request.OrderId = "46546416"
 	request.LogisticsList = append(request.LogisticsList, *logistics)
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Error(err)
 	}
@@ -80,7 +80,7 @@ func TestLogisticSync4(t *testing.T)  {
 	request.OrderId = "46546416"
 	request.LogisticsList = append(request.LogisticsList, *logistics)
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Error(err)
 	}
@@ -106,7 +106,7 @@ func TestLogisticSync5(t *testing.T)  {
 	request.OrderId = "46546416"
 	request.LogisticsList = append(request.LogisticsList, *logistics)
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Error(err)
 	}
@@ -133,7 +133,7 @@ func TestLogisticSync6(t *testing.T)  {
 	request.OrderId = "46546416"
 	request.LogisticsList = append(request.LogisticsList, *logistics)
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Error(err)
 	}
@@ -161,7 +161,7 @@ func TestLogisticSync7(t *testing.T)  {
 	request.OrderId = "46546416"
 	request.LogisticsList = append(request.LogisticsList, *logistics)
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Error(err)
 	}
@@ -190,7 +190,7 @@ func TestLogisticSync8(t *testing.T)  {
 	request.OrderId = "46546416"
 	request.LogisticsList = append(request.LogisticsList, *logistics)
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Error(err)
 	}
@@ -208,7 +208,7 @@ func TestLogisticSync8(t *testing.T)  {
 
 //
 func TestLogisticSync9(t *testing.T)  {
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Error(err)
 	}
@@ -251,7 +251,7 @@ func TestLogisticSync9(t *testing.T)  {
 
 //
 func TestLogisticSync10(t *testing.T)  {
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Error(err)
 	}

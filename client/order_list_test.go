@@ -1,9 +1,9 @@
-package yunji
+package client
 
 import (
+	"github.com/taadis/yunji-sdk-go/config"
 	"testing"
 	"time"
-	"yunji/test"
 )
 
 //
@@ -12,7 +12,7 @@ func TestOrderList1(t *testing.T) {
 	request := new(OrderListRequest)
 	// 不设置任何请求参数
 
-	client, err := NewClient(test.ServerUrl, "test", "test")
+	client, err := NewClient(config.ServerUrl, "test", "test")
 	if err != nil{
 		t.Error(err)
 	}
@@ -35,7 +35,7 @@ func TestOrderList2(t *testing.T) {
 	request := new(OrderListRequest)
 	// 不设置任何请求参数
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Errorf(err.Error())
 	}
@@ -57,7 +57,7 @@ func TestOrderList3(t *testing.T) {
 	request := new(OrderListRequest)
 	request.Status = "40,50"
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Errorf(err.Error())
 	}
@@ -79,7 +79,7 @@ func TestOrderList4(t *testing.T) {
 	request.Status = "40,50"
 	request.StartTime = time.Now().Format("2006-01-02 15:04:05")
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err !=nil{
 		t.Errorf(err.Error())
 	}
@@ -102,7 +102,7 @@ func TestOrderList5(t *testing.T) {
 	request.StartTime = time.Now().Format("2006-01-02 15:04:05")
 	request.EndTime = time.Now().Format("2006-01-02 15:04:05")
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Errorf(err.Error())
 	}
@@ -126,7 +126,7 @@ func TestOrderList6(t *testing.T) {
 	request.EndTime = time.Now().Format("2006-01-02 15:04:05")
 	request.PageNo = 1
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Errorf(err.Error())
 	}
@@ -150,7 +150,7 @@ func TestOrderList7(t *testing.T) {
 	request.EndTime = time.Now().Format("2006-01-02 15:04:05")
 	request.PageNo = 1
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Errorf(err.Error())
 	}
@@ -175,7 +175,7 @@ func TestOrderList8(t *testing.T) {
 	request.PageNo = 1
 	request.PageSize = 1
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Errorf(err.Error())
 	}

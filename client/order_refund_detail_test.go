@@ -1,16 +1,16 @@
-package yunji
+package client
 
 import (
+	"github.com/taadis/yunji-sdk-go/config"
 	"testing"
 	"time"
-	"yunji/test"
 )
 
 //
 func TestOrderRefundDetail1(t *testing.T){
 	request := new(OrderRefundDetailRequest)
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Error(err)
 	}
@@ -36,7 +36,7 @@ func TestOrderRefundDetail2(t *testing.T){
 	orderRefundListRequest.ReturnStatus = "0,1,3,4,5"
 	orderRefundListRequest.QueryType = 1
 
-	client, err := NewClient(test.ServerUrl, test.AppKey, test.AppSecret)
+	client, err := NewClient(config.ServerUrl, config.AppKey, config.AppSecret)
 	if err != nil{
 		t.Error(err)
 	}
